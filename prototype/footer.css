@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #fcfcfc;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(36, 36, 36);
+  height: auto;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+  color: #fff;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.footer-bottom{
+  background: rgb(28, 28, 28);
+  width: 100vw;
+  padding: 10px ;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+ 
+}
