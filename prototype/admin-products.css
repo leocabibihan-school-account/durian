@@ -10,6 +10,11 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Roboto", sans-serif;
   color: #000; }
 
+.footer-content h3 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -107,5 +112,11 @@ a {
       color: #fff;
       font-size: 20px;
       margin-bottom: 30px; }
+
+.table {
+  max-height: 400px; 
+  overflow: auto;
+}
+
 
 

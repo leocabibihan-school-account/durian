@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <nav class="mb-5 navbar navbar-expand-lg navbar-dark bg-dark">
+  <link rel="stylesheet" href="admin-products.css">
+  <link rel="stylesheet" href="footer.css">
+  <nav class="navbar mb-5 navbar-expand-lg navbar-dark bg-dark">
+    
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/durian.png" class="img-fluid">
-        Navbar
-      </a>
+      <img src="img/durian.png" width="25"alt=""><a class="navbar-brand" href="#">&nbsp;   DURIAN</a>
+      
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -26,54 +29,132 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
         </ul>
       </div>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button type="button" class="btn btn-outline-secondary">Search</button>
       </form>
     </div>
-  </nav>
+  </nav>  
 </head>
 <body>
-  <div class="mb-5 text-center">
-    <h1 class="display-5">[Product Name] - Reviews</h1>
+  <div class="container" style="padding-top: 15px; padding-bottom: 100px;">
+    <div class="mb-5 text-center">
+      <h1 class="display-5">[Product Name] - Reviews</h1>
+    </div>
+    <div class="table d-flex p-2 justify-content-center">
+      <table class="w-75 table table-striped table-hover table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Author</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>5.0</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>5.0</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>4.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="d-flex p-2 justify-content-center">
-    <table class="w-75 table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Author</th>
-          <th scope="col">Title</th>
-          <th scope="col">Content</th>
-          <th scope="col">Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Lorem Ipsum</td>
-          <td>Lorem Ipsum</td>
-          <td>5.0</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Lorem Ipsum</td>
-          <td>Lorem Ipsum</td>
-          <td>3.5</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry the Bird</td>
-          <td>Lorem Ipsum</td>
-          <td>Lorem Ipsum</td>
-          <td>4.0</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <footer>
+    <div class="footer-content">
+        <h3>Footer</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo iste corrupti doloribus odio sed!</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy;2020 Durian. designed by <b>Durians</b></p>
+    </div>
+  </footer>
 </body>
 </html>
