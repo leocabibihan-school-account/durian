@@ -22,10 +22,6 @@ public class OrderDetails {
     @Column(nullable = false)
     private double total;
 
-    @OneToOne
-    @JoinColumn(name = "payment_details", nullable = false)
-    private PaymentDetails payment_id;
-
     @Column(nullable = false)
     private int amount;
 
@@ -36,5 +32,11 @@ public class OrderDetails {
     @Column
     @UpdateTimestamp
     private LocalDateTime modified_at;
+
+    @Column(nullable = false)
+    private String provider;
+
+    @Column(nullable = false)
+    private String status;
 
 }

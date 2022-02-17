@@ -28,9 +28,11 @@ public class ProductCategory {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+
 
 
 }

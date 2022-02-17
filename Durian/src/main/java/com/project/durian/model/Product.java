@@ -3,14 +3,9 @@ package com.project.durian.model;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 public class Product {
@@ -36,6 +31,17 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private Set<ProductCategory> productCategoryList;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private Set<ProductInventory> productInventoryList;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private Set<ProductImage> productImageList;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private Set<ProductOption> productOptionList;
     /*
     public Customer() {}
 

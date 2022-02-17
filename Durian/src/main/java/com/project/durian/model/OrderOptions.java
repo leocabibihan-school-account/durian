@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "order_options")
@@ -15,11 +16,11 @@ public class OrderOptions {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "order_item_id", nullable = false)
     private OrderItem orderItem;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "product_option_id", nullable = false)
     private ProductOption productOption;
 

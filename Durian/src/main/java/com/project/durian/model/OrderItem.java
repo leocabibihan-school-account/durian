@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "order_item")
@@ -17,9 +18,9 @@ public class OrderItem {
 
     @OneToMany
     @JoinColumn(name = "order_id", nullable = false)
-    private OrderDetails orderDetails;
+    private Set<OrderDetails> orderDetails;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 

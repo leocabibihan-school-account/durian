@@ -26,7 +26,7 @@ public class ProductOption {
     @Column(nullable = false)
     private double add_on_price;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 

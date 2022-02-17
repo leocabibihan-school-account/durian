@@ -5,6 +5,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
@@ -14,18 +15,11 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user", nullable = false)
-    private User user;
-
     @Column(nullable = false)
     private String first_name;
 
     @Column(nullable = false)
     private String last_name;
-
-    @Column(nullable = false)
-    private int telephone;
 
     @Column(updatable = false)
     @CreationTimestamp
@@ -35,42 +29,79 @@ public class Customer {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    /*
-    public Customer() {}
+    @Column(nullable = false)
+    private String  address_line1;
 
-    public Customer(CustomerDTO customerDTO) {
-        this.user = new User(userDTO.getUserId());
-        this.first_name = addressDTO.getFirstName();
-        this.last_name = addressDTO.getLastName();
-        this.telephone = addressDTO.getTelephone();
-    }
+    @Column(nullable = false)
+    private String  address_line2;
+
+    @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
+    private String  postal_code;
+
+    @Column(nullable = false)
+    private String  country;
+
+    @Column(nullable = false)
+    private int mobile;
+
+    @Column(nullable = false)
+    private int telephone;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
+    private Set<CustomerPayment> customerPaymentList;
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.MERGE)
+    @PrimaryKeyJoinColumn
+    private User user;
 
     public Long getId() {
         return id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public String getFirstName() {
+    public String getFirst_name() {
         return first_name;
     }
 
-    public String getLastName() {
+    public String getLast_name() {
         return last_name;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public LocalDateTime getModified_at() {
+        return modified_at;
+    }
+
+    public String getAddress_line1() {
+        return address_line1;
+    }
+
+    public String getAddress_line2() {
+        return address_line2;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPostal_code() {
+        return postal_code;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public int getMobile() {
+        return mobile;
     }
 
     public int getTelephone() {
         return telephone;
     }
-
-    public LocalDateTime getDateCreated() {
-        return created_at;
-    }
-
-    public LocalDateTime getDateUpdated() {
-        return modified_at;
-    }
-*/
 }
