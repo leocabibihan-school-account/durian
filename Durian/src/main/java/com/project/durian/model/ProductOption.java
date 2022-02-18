@@ -38,42 +38,17 @@ public class ProductOption {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    /*
-    public Customer() {}
+    public Long getId() { return id; }
 
-    public Customer(CustomerDTO customerDTO) {
-        this.user = new User(userDTO.getUserId());
-        this.first_name = addressDTO.getFirstName();
-        this.last_name = addressDTO.getLastName();
-        this.telephone = addressDTO.getTelephone();
-    }
+    public String getOption() { return option; }
 
-    public Long getId() {
-        return id;
-    }
+    public String getOption_category() { return option_category; }
 
-    public User getUser() {
-        return user;
-    }
+    public String getDescription() { return description; }
 
-    public String getFirstName() {
-        return first_name;
-    }
+    public double getAdd_on_price() { return add_on_price; }
 
-    public String getLastName() {
-        return last_name;
-    }
+    public LocalDateTime getCreated_at() { return created_at; }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public LocalDateTime getDateCreated() {
-        return created_at;
-    }
-
-    public LocalDateTime getDateUpdated() {
-        return modified_at;
-    } */
-
+    public LocalDateTime getModified_at() { return modified_at; }
 }

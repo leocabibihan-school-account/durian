@@ -1,9 +1,9 @@
 package com.project.durian.services.impl;
 
-import com.csb.appadvc2122.dto.UserDTO;
-import com.csb.appadvc2122.model.User;
-import com.csb.appadvc2122.repository.UserRepository;
-import com.csb.appadvc2122.services.UserService;
+import com.project.durian.dto.UserDTO;
+import com.project.durian.model.User;
+import com.project.durian.repository.UserRepository;
+import com.project.durian.services.UserService;
 import com.project.durian.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

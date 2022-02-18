@@ -29,42 +29,11 @@ public class ProductInventory {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    /*
-    public Customer() {}
+    public Long getId() { return id; }
 
-    public Customer(CustomerDTO customerDTO) {
-        this.user = new User(userDTO.getUserId());
-        this.first_name = addressDTO.getFirstName();
-        this.last_name = addressDTO.getLastName();
-        this.telephone = addressDTO.getTelephone();
-    }
+    public int getQuantity() { return quantity; }
 
-    public Long getId() {
-        return id;
-    }
+    public LocalDateTime getCreated_at() { return created_at; }
 
-    public User getUser() {
-        return user;
-    }
-
-    public String getFirstName() {
-        return first_name;
-    }
-
-    public String getLastName() {
-        return last_name;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public LocalDateTime getDateCreated() {
-        return created_at;
-    }
-
-    public LocalDateTime getDateUpdated() {
-        return modified_at;
-    } */
-
+    public LocalDateTime getModified_at() { return modified_at; }
 }

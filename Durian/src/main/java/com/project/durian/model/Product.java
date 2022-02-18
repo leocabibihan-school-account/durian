@@ -42,42 +42,16 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private Set<ProductOption> productOptionList;
-    /*
-    public Customer() {}
 
-    public Customer(CustomerDTO customerDTO) {
-        this.user = new User(userDTO.getUserId());
-        this.first_name = addressDTO.getFirstName();
-        this.last_name = addressDTO.getLastName();
-        this.telephone = addressDTO.getTelephone();
-    }
+    public Long getId() { return id; }
 
-    public Long getId() {
-        return id;
-    }
+    public String getName() { return name; }
 
-    public User getUser() {
-        return user;
-    }
+    public String getDescription() { return description; }
 
-    public String getFirstName() {
-        return first_name;
-    }
+    public int getPrice() { return price; }
 
-    public String getLastName() {
-        return last_name;
-    }
+    public LocalDateTime getCreated_at() { return created_at; }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public LocalDateTime getDateCreated() {
-        return created_at;
-    }
-
-    public LocalDateTime getDateUpdated() {
-        return modified_at;
-    } */
-
+    public LocalDateTime getModified_at() { return modified_at; }
 }

@@ -32,7 +32,13 @@ public class ProductCategory {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
+    public Long getId() { return id; }
 
+    public String getName() { return name; }
 
+    public String getDescription() { return description; }
 
+    public LocalDateTime getCreated_at() { return created_at; }
+
+    public LocalDateTime getModified_at() { return modified_at; }
 }

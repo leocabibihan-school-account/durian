@@ -1,6 +1,6 @@
 package com.project.durian.dto;
 
-import com.csb.appadvc2122.model.User;
+import com.project.durian.model.User;
 
 import java.util.Collections;
 import java.util.Optional;

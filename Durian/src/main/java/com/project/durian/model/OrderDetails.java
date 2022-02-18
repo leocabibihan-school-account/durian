@@ -39,4 +39,17 @@ public class OrderDetails {
     @Column(nullable = false)
     private String status;
 
+    public Long getId() { return id; }
+
+    public double getTotal() { return total; }
+
+    public int getAmount() { return amount; }
+
+    public LocalDateTime getCreated_at() { return created_at; }
+
+    public LocalDateTime getModified_at() { return modified_at; }
+
+    public String getProvider() { return provider; }
+
+    public String getStatus() { return status; }
 }
