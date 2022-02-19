@@ -4,7 +4,6 @@ import com.project.durian.dto.UserDTO;
 import com.project.durian.model.User;
 import com.project.durian.repository.UserRepository;
 import com.project.durian.services.UserService;
-import com.project.durian.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDTO> list() {
         return StreamSupport.stream(userRepository.findAll().spliterator(), false)
-                    .map(UserDTO::new)
+                    .map((User t) -> new UserDTO(t))
                     .collect(Collectors.toList());
     }
 

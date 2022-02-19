@@ -20,9 +20,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private AddressService addressService;
-
     @GetMapping
     private String list(Model model) {
         model.addAttribute("users", userService.list());
@@ -44,7 +41,6 @@ public class UserController {
     @GetMapping("/{id}")
     private String getUser(@PathVariable Long id, Model model) {
         model.addAttribute("user", userService.get(id));
-        model.addAttribute("address", new AddressDTO());
         return "user/view-user";
     }
 
@@ -59,12 +55,4 @@ public class UserController {
         userService.delete(user.getId());
         return list(model);
     }
-
-    @PostMapping("/{userId}/address")
-    private String addUserAddress(@PathVariable Long userId, AddressDTO addressDTO, Model model) {
-        addressDTO.setUserId(userId);
-        addressService.add(addressDTO);
-        return getUser(userId, model);
-    }
-
 }

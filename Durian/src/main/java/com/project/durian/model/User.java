@@ -1,17 +1,11 @@
 package com.project.durian.model;
 
 
+import com.project.durian.dto.UserDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -29,10 +23,27 @@ public class User {
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private Boolean admin;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.MERGE)
+    @PrimaryKeyJoinColumn
+    private Customer customer;
 
 
-    public User() {}
-    public User(Long id) {this.id = id; }
+    public User() {
+    }
+
+    public User(Long id) {
+        this.id = id;
+    }
+
+    public User(UserDTO userDTO) {
+        this.id = userDTO.getId();
+        this.password = userDTO.getPassword();
+        this.email = userDTO.getEmail();
+        this.admin = userDTO.getAdmin();
+    }
 
     public Long getId() {
         return id;
@@ -56,5 +67,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 }

@@ -38,15 +38,27 @@ public class CustomerPayment {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getProvider() { return provider; }
+    public String getProvider() {
+        return provider;
+    }
 
-    public int getAccount_no() { return account_no; }
+    public int getAccount_no() {
+        return account_no;
+    }
 
-    public int getExpiry() { return expiry; }
+    public int getExpiry() {
+        return expiry;
+    }
 
-    public LocalDateTime getCreated_at() { return created_at; }
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
 
-    public LocalDateTime getModified_at() { return modified_at; }
+    public LocalDateTime getModified_at() {
+        return modified_at;
+    }
 }

@@ -45,10 +45,6 @@ public class OrderDetails {
 
     public int getAmount() { return amount; }
 
-    public LocalDateTime getCreated_at() { return created_at; }
-
-    public LocalDateTime getModified_at() { return modified_at; }
-
     public String getProvider() { return provider; }
 
     public String getStatus() { return status; }

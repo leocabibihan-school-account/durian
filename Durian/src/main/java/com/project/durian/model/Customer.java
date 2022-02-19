@@ -12,7 +12,7 @@ import java.util.Set;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "user_id")
     private Long id;
 
     @Column(nullable = false)
@@ -53,8 +53,9 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
     private Set<CustomerPayment> customerPaymentList;
 
-    @OneToOne(mappedBy = "customer", cascade = CascadeType.MERGE)
-    @PrimaryKeyJoinColumn
+    @OneToOne()
+    @MapsId
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getId() {
