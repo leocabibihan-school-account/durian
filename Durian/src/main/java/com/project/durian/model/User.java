@@ -76,4 +76,21 @@ public class User {
     public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
+
+    @Column(updatable = false)
+    @CreationTimestamp
+    private LocalDateTime dateCreated;
+
+    @Column
+    @UpdateTimestamp
+    private LocalDateTime dateUpdated;
+
+
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
+    }
+
+    public LocalDateTime getDateUpdated() {
+        return dateUpdated;
+    }
 }

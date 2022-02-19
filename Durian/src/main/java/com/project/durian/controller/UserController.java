@@ -20,39 +20,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    private String list(Model model) {
-        model.addAttribute("users", userService.list());
-        return "user/index";
-    }
 
-    @GetMapping("/add")
+
+    @GetMapping("/sign-up")
     private String getUserAddForm(Model model) {
         model.addAttribute("user", new UserDTO());
-        return "user/add-user";
+        return "user/sign-up";
     }
 
     @PostMapping
     private String add(UserDTO user, Model model) {
+        user.setAdmin(false);
         userService.add(user);
-        return list(model);
+        return "index";
     }
 
-    @GetMapping("/{id}")
-    private String getUser(@PathVariable Long id, Model model) {
-        model.addAttribute("user", userService.get(id));
-        return "user/view-user";
-    }
 
-    @PutMapping
-    private String updateUser(UserDTO user, Model model) {
-        userService.update(user);
-        return list(model);
-    }
-
-    @DeleteMapping
-    private String deleteUser(UserDTO user, Model model) {
-        userService.delete(user.getId());
-        return list(model);
-    }
 }
