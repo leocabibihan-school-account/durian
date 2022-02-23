@@ -3,6 +3,7 @@ package com.project.durian.dto;
 import com.project.durian.model.Customer;
 import com.project.durian.model.User;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -12,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
 public class UserDTO {
 
     private Long id;
@@ -20,6 +22,9 @@ public class UserDTO {
     private String password;
 
     /* Need to implement better validation */
+
+
+    @Email(message = "Email should be valid")
     @NotBlank(message = "Email is Required")
     private String email;
 
