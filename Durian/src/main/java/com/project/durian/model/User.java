@@ -26,9 +26,12 @@ public class User {
     @Column(nullable = false)
     private Boolean admin;
 
+
+
     @OneToOne(mappedBy = "user", cascade = CascadeType.MERGE)
     @PrimaryKeyJoinColumn
     private Customer customer;
+
 
 
     public User() {
@@ -45,6 +48,10 @@ public class User {
         this.admin = userDTO.getAdmin();
     }
 
+
+    public Customer getCustomer() {
+        return customer;
+    }
     public Long getId() {
         return id;
     }
@@ -57,24 +64,12 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Boolean getAdmin() {
         return admin;
-    }
-
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
     }
 
     @Column(updatable = false)

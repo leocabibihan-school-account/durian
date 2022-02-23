@@ -6,9 +6,9 @@ public class ProductOptionDTO {
 
     private Long id;
     private String option;
-    private String option_category;
+    private String optionCategory;
     private String description;
-    private double add_on_price;
+    private double addOnPrice;
     private Product product;
 
     private ProductOptionDTO () {}
@@ -30,11 +30,11 @@ public class ProductOptionDTO {
     }
 
     public String getOption_category() {
-        return option_category;
+        return optionCategory;
     }
 
     public void setOption_category(String option_category) {
-        this.option_category = option_category;
+        this.optionCategory = option_category;
     }
 
     public String getDescription() {
@@ -46,11 +46,11 @@ public class ProductOptionDTO {
     }
 
     public double getAdd_on_price() {
-        return add_on_price;
+        return addOnPrice;
     }
 
     public void setAdd_on_price(double add_on_price) {
-        this.add_on_price = add_on_price;
+        this.addOnPrice = add_on_price;
     }
 
     public Product getProduct() {

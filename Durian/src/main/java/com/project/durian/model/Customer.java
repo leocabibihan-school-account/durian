@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.CustomerDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -57,6 +58,19 @@ public class Customer {
     @MapsId
     @JoinColumn(name = "user_id")
     private User user;
+
+    public Customer() {}
+
+    public Customer(CustomerDTO customerDTO) {
+        this.id = customerDTO.getId();
+        this.first_name = customerDTO.getFirstName();
+        this.last_name = customerDTO.getLastName();
+        this.address_line1 = customerDTO.getAddressLine1();
+        this.address_line2 = customerDTO.getAddressLine2();
+        this.city = customerDTO.getCity();
+        this.postal_code = customerDTO.getPostalCode();
+        this.country = customerDTO.getCountry();
+    }
 
     public Long getId() {
         return id;

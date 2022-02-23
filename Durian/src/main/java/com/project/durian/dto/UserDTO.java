@@ -1,7 +1,11 @@
 package com.project.durian.dto;
 
+import com.project.durian.model.Customer;
 import com.project.durian.model.User;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
@@ -12,22 +16,30 @@ public class UserDTO {
 
     private Long id;
 
+    @NotBlank(message = "Password is Required")
     private String password;
 
+    /* Need to implement better validation */
+    @NotBlank(message = "Email is Required")
     private String email;
 
     private Boolean admin;
 
-
+    private CustomerDTO customer;
 
     public UserDTO() {}
+
+
 
     public UserDTO(User user) {
         this.id = user.getId();
         this.password = user.getPassword();
         this.email = user.getEmail();
         this.admin = user.getAdmin();
+        this.customer = user.getCustomer() == null? null: new CustomerDTO(user.getCustomer());
     }
+
+
 
     public Long getId() {
         return id;
@@ -60,5 +72,10 @@ public class UserDTO {
     public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
+
+    public CustomerDTO getCustomer() {
+        return customer;
+    }
+
 
 }

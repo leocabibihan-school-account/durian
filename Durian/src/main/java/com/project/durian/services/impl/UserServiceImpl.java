@@ -1,7 +1,10 @@
 package com.project.durian.services.impl;
 
+import com.project.durian.dto.CustomerDTO;
 import com.project.durian.dto.UserDTO;
+import com.project.durian.model.Customer;
 import com.project.durian.model.User;
+import com.project.durian.repository.CustomerRepository;
 import com.project.durian.repository.UserRepository;
 import com.project.durian.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     @Override
     public List<UserDTO> list() {
         return StreamSupport.stream(userRepository.findAll().spliterator(), false)
@@ -31,6 +37,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void add(UserDTO userDTO) {
         userRepository.save(new User(userDTO));
+    }
+
+    @Override
+    public void add(CustomerDTO customerDTO) { customerRepository.save(new Customer(customerDTO));}
+
+    @Override
+    public void add(UserDTO userDTO, CustomerDTO customerDTO) {
+        add(userDTO);
+        add(customerDTO);
     }
 
     @Override
