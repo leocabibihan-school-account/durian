@@ -1,39 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8af27b29-a157-4b6d-a8b7-f77e0b6f53df" name="Changes" comment="" />
+    <list default="true" id="19b7f5fb-c8a2-4be9-8f7b-53c140562889" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Durian/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/DurianApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/CustomerDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/CustomerPaymentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderDetailsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderItemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderOptionsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductCategoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductImageDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductInventoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductOptionDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/CustomerPayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderOptions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductInventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/services/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/admin/view-user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/user/sign-up.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Durian/src/test/java/com/project/durian/DurianApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="25VoktGyJOYGvyrYNXLc6hW9bY5" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="258rpThi6I72dILKXl1O5DWcyg4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Durian" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsDialog.application.dockerConsole" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\resources\templates\store" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\resources\templates\store" />
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\resources\templates\admin" />
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\resources\templates" />
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\java\com\project\durian\services" />
+      <recent name="C:\Users\ACER\source\appadvc\form-practice\Durian\src\main\java\com\project\durian\repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.durian.repository" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DurianApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Durian" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.durian.DurianApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8af27b29-a157-4b6d-a8b7-f77e0b6f53df" name="Changes" comment="" />
-      <created>1645621761279</created>
+      <changelist id="19b7f5fb-c8a2-4be9-8f7b-53c140562889" name="Changes" comment="" />
+      <created>1644919740906</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1645621761279</updated>
-      <workItem from="1645621762742" duration="22000" />
+      <updated>1644919740906</updated>
+      <workItem from="1644919742261" duration="1663000" />
+      <workItem from="1644921441326" duration="5722000" />
+      <workItem from="1644927243549" duration="241000" />
+      <workItem from="1645092502866" duration="5877000" />
+      <workItem from="1645185163272" duration="5877000" />
+      <workItem from="1645191127843" duration="4000" />
+      <workItem from="1645191747699" duration="269000" />
+      <workItem from="1645192242603" duration="4258000" />
+      <workItem from="1645233546278" duration="2834000" />
+      <workItem from="1645248950249" duration="12372000" />
+      <workItem from="1645279958996" duration="91000" />
+      <workItem from="1645280236731" duration="211000" />
+      <workItem from="1645366357143" duration="468000" />
+      <workItem from="1645516056585" duration="23718000" />
+      <workItem from="1645617792463" duration="8458000" />
+      <workItem from="1645626358058" duration="93000" />
+      <workItem from="1645626658038" duration="1849000" />
+      <workItem from="1645697258953" duration="10246000" />
+      <workItem from="1645711626178" duration="4826000" />
+      <workItem from="1645717186066" duration="48000" />
+      <workItem from="1645781720427" duration="3951000" />
+      <workItem from="1645797803257" duration="323000" />
+      <workItem from="1645798159623" duration="609000" />
+      <workItem from="1645799072048" duration="3221000" />
+      <workItem from="1645802410599" duration="65000" />
+      <workItem from="1645802640688" duration="2677000" />
+      <workItem from="1647050460522" duration="3235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.aop.framework.JdkDynamicAopProxy" memberName="advised" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
