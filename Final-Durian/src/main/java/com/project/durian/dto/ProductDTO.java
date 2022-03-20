@@ -1,5 +1,8 @@
 package com.project.durian.dto;
 
+import com.project.durian.model.Customer;
+import com.project.durian.model.Product;
+
 public class ProductDTO {
 
     private Long id;

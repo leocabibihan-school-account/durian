@@ -5,48 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19b7f5fb-c8a2-4be9-8f7b-53c140562889" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Durian/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/DurianApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/CustomerDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/CustomerPaymentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderDetailsDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderItemDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/OrderOptionsDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductCategoryDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductImageDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductInventoryDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/ProductOptionDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/dto/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/CustomerPayment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/OrderOptions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductInventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/ProductOption.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/repository/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/java/com/project/durian/services/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/admin/view-user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/fragments/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/main/resources/templates/user/sign-up.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Durian/src/test/java/com/project/durian/DurianApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Final-Durian" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -153,6 +112,11 @@
       <workItem from="1645802410599" duration="65000" />
       <workItem from="1645802640688" duration="2677000" />
       <workItem from="1647050460522" duration="3235000" />
+      <workItem from="1647053831052" duration="307000" />
+      <workItem from="1647155908002" duration="25000" />
+      <workItem from="1647168598937" duration="209000" />
+      <workItem from="1647168851020" duration="12000" />
+      <workItem from="1647650995296" duration="28000" />
     </task>
     <servers />
   </component>
