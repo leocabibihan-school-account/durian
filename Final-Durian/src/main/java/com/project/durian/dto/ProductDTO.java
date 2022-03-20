@@ -7,6 +7,18 @@ public class ProductDTO {
 
     private Long id;
     private String name;
+    private String description;
+    private int price;
+
+    public ProductDTO() {}
+
+    public ProductDTO(Product product) {
+        this.id = product.getId();
+        this.name = product.getName();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
+
+    }
 
     public Long getId() {
         return id;
@@ -40,7 +52,6 @@ public class ProductDTO {
         this.price = price;
     }
 
-    private String description;
-    private int price;
+
 
 }

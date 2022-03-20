@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.OrderDetailsDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -38,6 +39,14 @@ public class OrderDetails {
 
     @Column(nullable = false)
     private String status;
+
+    public OrderDetails() {}
+
+    public OrderDetails(OrderDetailsDTO orderDetailsDTO) {
+        this.id = orderDetailsDTO.getId();
+        this.total = orderDetailsDTO.getTotal();
+        this.amount = orderDetailsDTO.getAmount();
+    }
 
     public Long getId() { return id; }
 

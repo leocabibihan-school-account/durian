@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.CustomerPaymentDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -38,9 +39,21 @@ public class CustomerPayment {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
+    public CustomerPayment() {}
+
+    public CustomerPayment(CustomerPaymentDTO customerPaymentDTO) {
+        this.id = customerPaymentDTO.getId();
+        this.payment_type = customerPaymentDTO.getPaymentType();
+        this.provider = customerPaymentDTO.getProvider();
+        this.account_no = customerPaymentDTO.getAccountNo();
+        this.expiry = customerPaymentDTO.getExpiry();
+    }
+
     public Long getId() {
         return id;
     }
+
+    public String getPayment_type() { return payment_type; }
 
     public String getProvider() {
         return provider;

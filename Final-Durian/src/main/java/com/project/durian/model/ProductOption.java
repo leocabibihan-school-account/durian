@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.ProductOptionDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -37,6 +38,16 @@ public class ProductOption {
     @Column
     @UpdateTimestamp
     private LocalDateTime modified_at;
+
+    public ProductOption() {}
+
+    public ProductOption(ProductOptionDTO productOptionDTO) {
+        this.id = productOptionDTO.getId();
+        this.option = productOptionDTO.getOption();
+        this.option_category = productOptionDTO.getOption_category();
+        this.description = productOptionDTO.getDescription();
+        this.add_on_price = productOptionDTO.getAdd_on_price();
+    }
 
     public Long getId() { return id; }
 

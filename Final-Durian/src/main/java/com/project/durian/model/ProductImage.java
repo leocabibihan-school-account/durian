@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.ProductImageDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -28,6 +29,13 @@ public class ProductImage {
     @Column
     @UpdateTimestamp
     private LocalDateTime modified_at;
+
+    public ProductImage() {}
+
+    public ProductImage(ProductImageDTO productImageDTO) {
+        this.id = productImageDTO.getId();
+        this.image = productImageDTO.getImage();
+    }
 
     public Long getId() { return id; }
 

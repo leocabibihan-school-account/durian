@@ -1,6 +1,7 @@
 package com.project.durian.model;
 
 
+import com.project.durian.dto.OrderItemDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -31,6 +32,12 @@ public class OrderItem {
     @Column
     @UpdateTimestamp
     private LocalDateTime modified_at;
+
+    public OrderItem() {}
+
+    public OrderItem(OrderItemDTO orderItemDTO) {
+        this.id = orderItemDTO.getId();
+    }
 
     public Long getId() { return id; }
 

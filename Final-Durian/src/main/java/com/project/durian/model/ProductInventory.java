@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.ProductInventoryDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -28,6 +29,13 @@ public class ProductInventory {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    public ProductInventory() {}
+
+    public ProductInventory(ProductInventoryDTO productInventoryDTO) {
+        this.id = productInventoryDTO.getId();
+        this.quantity = productInventoryDTO.getQuantity();
+    }
 
     public Long getId() { return id; }
 

@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.ProductCategoryDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -31,6 +32,14 @@ public class ProductCategory {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    public ProductCategory() {}
+
+    public ProductCategory(ProductCategoryDTO productCategoryDTO) {
+        this.id = productCategoryDTO.getId();
+        this.name = productCategoryDTO.getName();
+        this.description = productCategoryDTO.getDescription();
+    }
 
     public Long getId() { return id; }
 

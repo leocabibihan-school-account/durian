@@ -1,5 +1,6 @@
 package com.project.durian.model;
 
+import com.project.durian.dto.ProductDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -42,6 +43,15 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private Set<ProductOption> productOptionList;
+
+    public Product() {}
+
+    public Product(ProductDTO productDTO) {
+        this.id = productDTO.getId();
+        this.name = productDTO.getName();
+        this.description = productDTO.getDescription();
+        this.price = productDTO.getPrice();
+    }
 
     public Long getId() { return id; }
 
