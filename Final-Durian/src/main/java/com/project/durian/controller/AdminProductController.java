@@ -1,6 +1,7 @@
 package com.project.durian.controller;
 
 import com.project.durian.dto.ProductDTO;
+import com.project.durian.dto.ProductOptionDTO;
 import com.project.durian.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,7 @@ public class AdminProductController {
     @GetMapping("/{id}")
     private String get(@PathVariable Long id, Model model) {
         model.addAttribute("product", productService.get(id));
+        model.addAttribute("productOption", new ProductOptionDTO());
         return "admin-product/view-product";
     }
 
@@ -61,6 +63,21 @@ public class AdminProductController {
     private String delete(ProductDTO product, Model model) {
         productService.delete(product.getId());
         return list(model);
+    }
+
+    @PostMapping("/{productId}/option")
+    private String addProductOption(@PathVariable Long productId, ProductOptionDTO productOption, Model model) {
+        productOption.setProductId(productId);
+        productService.addOption(productOption);
+        return get(productId, model);
+    }
+
+    //delete option
+
+    @DeleteMapping("/{productId}/option")
+    private String deleteOption(@PathVariable Long productId, ProductOptionDTO productOption, Model model) {
+        productService.deleteOption(productOption.getId());
+        return get(productId, model);
     }
 
 }

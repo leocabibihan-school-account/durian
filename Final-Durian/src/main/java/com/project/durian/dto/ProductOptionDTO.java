@@ -1,17 +1,35 @@
 package com.project.durian.dto;
 
 import com.project.durian.model.Product;
+import com.project.durian.model.ProductOption;
 
 public class ProductOptionDTO {
 
     private Long id;
-    private String option;
-    private String optionCategory;
-    private String description;
-    private double addOnPrice;
-    private Product product;
 
-    private ProductOptionDTO () {}
+    private Long productId;
+
+    private String option;
+
+    private String optionCategory;
+
+    private String description;
+
+    private double addOnPrice;
+
+
+    public ProductOptionDTO() {
+    }
+
+    public ProductOptionDTO(ProductOption productOption) {
+        this.id = productOption.getId();
+        this.productId = productOption.getProduct().getId();
+        this.option = productOption.getOption();
+        this.optionCategory = productOption.getOption_category();
+        this.description = productOption.getDescription();
+        this.addOnPrice = productOption.getAdd_on_price();
+
+    }
 
     public Long getId() {
         return id;
@@ -52,12 +70,13 @@ public class ProductOptionDTO {
     public void setAdd_on_price(double add_on_price) {
         this.addOnPrice = add_on_price;
     }
+    
 
-    public Product getProduct() {
-        return product;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 }

@@ -39,7 +39,8 @@ public class ProductOption {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    public ProductOption() {}
+    public ProductOption() {
+    }
 
     public ProductOption(ProductOptionDTO productOptionDTO) {
         this.id = productOptionDTO.getId();
@@ -47,19 +48,38 @@ public class ProductOption {
         this.option_category = productOptionDTO.getOption_category();
         this.description = productOptionDTO.getDescription();
         this.add_on_price = productOptionDTO.getAdd_on_price();
+        this.product = new Product(productOptionDTO.getProductId());
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getOption() { return option; }
+    public String getOption() {
+        return option;
+    }
 
-    public String getOption_category() { return option_category; }
+    public String getOption_category() {
+        return option_category;
+    }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public double getAdd_on_price() { return add_on_price; }
+    public double getAdd_on_price() {
+        return add_on_price;
+    }
 
-    public LocalDateTime getCreated_at() { return created_at; }
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
 
-    public LocalDateTime getModified_at() { return modified_at; }
+    public LocalDateTime getModified_at() {
+        return modified_at;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
 }

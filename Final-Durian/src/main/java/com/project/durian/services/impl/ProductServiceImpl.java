@@ -1,7 +1,10 @@
 package com.project.durian.services.impl;
 
 import com.project.durian.dto.ProductDTO;
+import com.project.durian.dto.ProductOptionDTO;
 import com.project.durian.model.Product;
+import com.project.durian.model.ProductOption;
+import com.project.durian.repository.ProductOptionRepository;
 import com.project.durian.repository.ProductRepository;
 import com.project.durian.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +22,13 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProductOptionRepository productOptionRepository;
+
     @Override
     public List<ProductDTO> list() {
         return StreamSupport.stream(productRepository.findAll().spliterator(), false)
-                .map((Product p) -> new ProductDTO(p))
+                .map(ProductDTO::new)
                 .collect(Collectors.toList());
     }
 
@@ -43,6 +49,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void delete(Long id) {
+        productRepository.deleteById(id);
+    }
+
+    @Override
+    public void addOption(ProductOptionDTO option) {
+        productOptionRepository.save(new ProductOption(option));
+    }
+
+    @Override
+    public void deleteOption(Long id) {
         productRepository.deleteById(id);
     }
 }
