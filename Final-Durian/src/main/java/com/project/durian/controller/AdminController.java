@@ -25,6 +25,7 @@ public class AdminController {
         return "admin/index";
     }
 
+
     @GetMapping("/{id}")
     private String getUser(@PathVariable Long id, Model model) {
         model.addAttribute("user", userService.get(id));
@@ -34,8 +35,7 @@ public class AdminController {
     @PutMapping
     private String updateUser(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
 
-        if (userService.validateUser(user, bindingResult))
-        {
+        if (userService.validateUser(user, bindingResult)) {
             model.addAttribute("user", user);
             return "admin/view-user";
         }

@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "product_category")
@@ -29,11 +30,11 @@ public class ProductCategory {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
+    private Set<Product> products;
 
-    public ProductCategory() {}
+    public ProductCategory() {
+    }
 
     public ProductCategory(ProductCategoryDTO productCategoryDTO) {
         this.id = productCategoryDTO.getId();
@@ -41,13 +42,27 @@ public class ProductCategory {
         this.description = productCategoryDTO.getDescription();
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public LocalDateTime getCreated_at() { return created_at; }
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
 
-    public LocalDateTime getModified_at() { return modified_at; }
+    public LocalDateTime getModified_at() {
+        return modified_at;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
 }

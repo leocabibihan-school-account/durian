@@ -23,6 +23,8 @@ public class ProductDTO {
 
     private Set<ProductOptionDTO> productOptions;
 
+    private ProductCategoryDTO category;
+
     public ProductDTO() {
     }
 
@@ -36,6 +38,8 @@ public class ProductDTO {
                 .stream()
                 .map(ProductOptionDTO::new)
                 .collect(Collectors.toSet());
+
+        this.category = new ProductCategoryDTO(product.getCategory());
 
     }
 

@@ -1,5 +1,6 @@
 package com.project.durian.services;
 
+import com.project.durian.dto.ProductCategoryDTO;
 import com.project.durian.dto.ProductDTO;
 import com.project.durian.dto.ProductOptionDTO;
 
@@ -20,5 +21,16 @@ public interface ProductService {
     void addOption(ProductOptionDTO option);
 
     void deleteOption(Long id);
+
+    void addCategory(ProductCategoryDTO category);
+
+    List<ProductCategoryDTO> categories();
+
+    ProductCategoryDTO getCategory(Long id);
+
+    void updateCategory(ProductCategoryDTO category);
+
+    void deleteCategory(Long id);
+
 
 }
