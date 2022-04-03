@@ -1,29 +1,8 @@
 package com.project.durian.dto;
 
 import com.project.durian.model.Product;
-import com.project.durian.model.ProductCategory;
-
-import java.util.Collections;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ProductCategoryDTO {
-
-    public ProductCategoryDTO() {
-    }
-
-    public ProductCategoryDTO(ProductCategory category) {
-        this.id = category.getId();
-        this.name = category.getName();
-        this.description = category.getDescription();
-        this.products = Optional.ofNullable(category.getProducts())
-                .orElseGet(Collections::emptySet)
-                .stream()
-                .map(ProductDTO::new)
-                .collect(Collectors.toSet());
-
-    }
 
     private Long id;
 
@@ -31,7 +10,7 @@ public class ProductCategoryDTO {
 
     private String description;
 
-    private Set<ProductDTO> products;
+    private Product product;
 
     public Long getId() {
         return id;
@@ -57,8 +36,11 @@ public class ProductCategoryDTO {
         this.description = description;
     }
 
-    public Set<ProductDTO> getProducts() {
-        return products;
+    public Product getProduct() {
+        return product;
     }
 
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

@@ -32,9 +32,8 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private ProductCategory category;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private Set<ProductCategory> productCategoryList;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private Set<ProductInventory> productInventoryList;

@@ -1,12 +1,9 @@
 package com.project.durian.services.impl;
 
-import com.project.durian.dto.ProductCategoryDTO;
 import com.project.durian.dto.ProductDTO;
 import com.project.durian.dto.ProductOptionDTO;
 import com.project.durian.model.Product;
-import com.project.durian.model.ProductCategory;
 import com.project.durian.model.ProductOption;
-import com.project.durian.repository.ProductCategoryRepository;
 import com.project.durian.repository.ProductOptionRepository;
 import com.project.durian.repository.ProductRepository;
 import com.project.durian.services.ProductService;
@@ -27,9 +24,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductOptionRepository productOptionRepository;
-
-    @Autowired
-    private ProductCategoryRepository productCategoryRepository;
 
     @Override
     public List<ProductDTO> list() {
@@ -67,32 +61,4 @@ public class ProductServiceImpl implements ProductService {
     public void deleteOption(Long id) {
         productRepository.deleteById(id);
     }
-
-    @Override
-    public void addCategory(ProductCategoryDTO category) {
-        productCategoryRepository.save(new ProductCategory(category));
-    }
-
-    @Override
-    public List<ProductCategoryDTO> categories() {
-        return StreamSupport.stream(productCategoryRepository.findAll().spliterator(), false)
-                .map(ProductCategoryDTO::new)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public void updateCategory(ProductCategoryDTO category) {
-        productCategoryRepository.save(new ProductCategory(category));
-    }
-
-    public ProductCategoryDTO getCategory(Long id) {
-        return new ProductCategoryDTO(productCategoryRepository.findById(id).get());
-    }
-
-    @Override
-    public void deleteCategory(Long id) {
-        productRepository.deleteById(id);
-    }
-
-
 }
