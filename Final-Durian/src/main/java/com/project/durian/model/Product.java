@@ -32,17 +32,11 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    private Set<ProductCategory> productCategoryList;
+    @Column
+    private String imageLocation;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
     private Set<ProductInventory> productInventoryList;
-
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    private Set<ProductImage> productImageList;
-
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    private Set<ProductOption> productOptionList;
 
     public Product() {
     }
@@ -74,15 +68,19 @@ public class Product {
         return price;
     }
 
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+
     public LocalDateTime getCreated_at() {
         return created_at;
     }
 
     public LocalDateTime getModified_at() {
         return modified_at;
-    }
-
-    public Set<ProductOption> getProductOptionList() {
-        return productOptionList;
     }
 }

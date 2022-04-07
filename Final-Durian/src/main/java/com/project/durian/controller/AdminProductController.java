@@ -1,9 +1,15 @@
 package com.project.durian.controller;
 
 import com.project.durian.dto.ProductDTO;
-import com.project.durian.dto.ProductOptionDTO;
+import com.project.durian.services.FileStorageService;
 import com.project.durian.services.ProductService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ContentDisposition;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +22,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("admin-product")
@@ -23,6 +31,9 @@ public class AdminProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private FileStorageService fileStorageService;
 
     @GetMapping
     private String list(Model model) {
@@ -49,7 +60,6 @@ public class AdminProductController {
     @GetMapping("/{id}")
     private String get(@PathVariable Long id, Model model) {
         model.addAttribute("product", productService.get(id));
-        model.addAttribute("productOption", new ProductOptionDTO());
         return "admin-product/view-product";
     }
 
@@ -65,19 +75,14 @@ public class AdminProductController {
         return list(model);
     }
 
-    @PostMapping("/{productId}/option")
-    private String addProductOption(@PathVariable Long productId, ProductOptionDTO productOption, Model model) {
-        productOption.setProductId(productId);
-        productService.addOption(productOption);
-        return get(productId, model);
-    }
-
-    //delete option
-
-    @DeleteMapping("/{productId}/option")
-    private String deleteOption(@PathVariable Long productId, ProductOptionDTO productOption, Model model) {
-        productService.deleteOption(productOption.getId());
-        return get(productId, model);
+    @GetMapping(value = "/{id}/image")
+    private ResponseEntity<Resource> getImage(@PathVariable Long id, Model model) throws IOException {
+        ProductDTO productDTO = productService.get(id);
+        Resource resource = fileStorageService.load(productDTO.getImageLoc());
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .contentLength(resource.contentLength())
+                .body(resource);
     }
 
 }

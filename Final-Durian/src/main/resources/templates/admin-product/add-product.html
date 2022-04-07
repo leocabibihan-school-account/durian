@@ -10,11 +10,15 @@
 <main>
     <div class="container">
         <h1 class="mt-5">Add Product</h1>
-        <form th:method="POST" th:action="@{~/admin-product}" th:object="${product}">
+        <form th:method="POST" th:action="@{~/admin-product}" th:object="${product}" enctype="multipart/form-data">
             <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
                 <ul>
                     <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
                 </ul>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control-file" id="image" th:field="*{image}">
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

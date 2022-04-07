@@ -11,80 +11,39 @@
 <main>
     <div class="container">
         <h1 class="mt-5">Product Information</h1>
-        <form th:method="PUT" th:action="@{~/admin-product}" th:object="${product}">
+        <form th:method="PUT" th:action="@{~/admin-product}" th:object="${product}" class="pb-5">
             <input type="hidden" name="id" th:field="*{id}">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea rows="4" cols="50" class="form-control" id="description" th:field="*{description}"
-                          placeholder=""></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">₱</span>
-                    <input type="number" class="form-control" id="price" th:field="*{price}" placeholder="">
+            <div class="row">
+                <div class="col">
+                    <img th:src="@{/admin-product/{id}/image(id=*{id})}" class="img-fluid img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea rows="4" cols="50" class="form-control" id="description" th:field="*{description}"
+                                  placeholder=""></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">₱</span>
+                            <input type="number" class="form-control" id="price" th:field="*{price}" placeholder="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Update Product</button>
                 </div>
             </div>
-            <button type="submit" class="btn btn-outline-primary">Update Product</button>
         </form>
-
-        <form class="mt-1" th:method="delete" th:action="@{~/admin-product}">
-            <input type="hidden" name="id" th:value="${product.id}">
-            <button type="submit" class="btn btn-outline-secondary">Permanently Delete</button>
-        </form>
-    </div>
-    <div class="container">
-        <h1 class="mt-5">Options</h1>
-        <form th:method="POST" th:action="@{~/admin-product/{id}/option(id=${product.id})}"
-              th:object="${productOption}">
-            <div class="mb-3">
-                <label for="option" class="form-label">Option</label>
-                <input type="text" class="form-control" id="option" th:field="*{option}" placeholder="Idk">
-            </div>
-            <div class="mb-3">
-                <label for="category" class="form-label">Category</label>
-                <input type="text" class="form-control" id="category" th:field="*{option_category}"
-                       placeholder="Category idk">
-            </div>
-            <div class="mb-3">
-                <label for="option-description" class="form-label">Description</label>
-                <textarea type="text" class="form-control" id="option-description" th:field="*{description}"
-                          placeholder="Enter Description"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="option-price" class="form-label">Add-on Price</label>
-                <input type="number" class="form-control" id="option-price" th:field="*{add_on_price}"
-                       placeholder="0.00">
-            </div>
-            <button type="submit" class="btn btn-outline-primary">Add Address</button>
-        </form>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Option/th>
-                <th>Category</th>
-                <th>Add-on Price</th>
-                <th>Delete</th>
-            </tr>
-            <tbody>
-            <tr th:each="option : ${product.productOptions}">
-                <td th:text="${option.option}"></td>
-                <td th:text="${option.option_category}"></td>
-                <td th:text="${option.add_on_price}"></td>
-                <!--delete-->
-                <td>
-                    <form th:method="deleteOption" th:action="@{~/admin-product/{id}/option(id=${product.id})}">
-                        <input type="hidden" name="id" th:value="${option.id}">
-                        <button type="submit" class="btn btn-outline-secondary">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="col-3 position-absolute" style="bottom: 27%; right: 13%">
+            <form class="mt-1" th:method="delete" th:action="@{~/admin-product}">
+                <input type="hidden" name="id" th:value="${product.id}">
+                <button type="submit" class="btn btn-outline-secondary">Permanently Delete</button>
+            </form>
+        </div>
     </div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -21,10 +21,6 @@ public class OrderOptions {
     @JoinColumn(name = "order_item_id", nullable = false)
     private OrderItem orderItem;
 
-    @ManyToOne
-    @JoinColumn(name = "product_option_id", nullable = false)
-    private ProductOption productOption;
-
     @Column(updatable = false)
     @CreationTimestamp
     private LocalDateTime created_at;

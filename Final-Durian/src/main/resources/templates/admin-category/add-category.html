@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1 class="mt-5">Add Category</h1>
+        <form th:method="POST" th:action="@{~/admin-category}" th:object="${category}">
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea rows="4" cols="50" class="form-control" id="description" th:field="*{description}"
+                          placeholder=""></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Create Product</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

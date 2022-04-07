@@ -3,6 +3,7 @@ package com.project.durian.dto;
 import com.project.durian.model.Customer;
 import com.project.durian.model.Product;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,14 +15,19 @@ import java.util.stream.Collectors;
 public class ProductDTO {
 
     private Long id;
+
     @NotBlank(message = "Name Required")
     private String name;
+
     @NotBlank(message = "Description Required")
     private String description;
+
     @NotNull(message = "price required")
     private Integer price;
 
-    private Set<ProductOptionDTO> productOptions;
+    private MultipartFile image;
+
+    private String imageLoc;
 
     public ProductDTO() {
     }
@@ -31,12 +37,7 @@ public class ProductDTO {
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
-        this.productOptions = Optional.ofNullable(product.getProductOptionList())
-                .orElseGet(Collections::emptySet)
-                .stream()
-                .map(ProductOptionDTO::new)
-                .collect(Collectors.toSet());
-
+        this.imageLoc = product.getImageLocation();
     }
 
     public Long getId() {
@@ -71,8 +72,19 @@ public class ProductDTO {
         this.price = price;
     }
 
+    public MultipartFile getImage() {
+        return image;
+    }
 
-    public Set<ProductOptionDTO> getProductOptions() {
-        return productOptions;
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
+
+    public String getImageLoc() {
+        return imageLoc;
+    }
+
+    public void setImageLoc(String imageLoc) {
+        this.imageLoc = imageLoc;
     }
 }
