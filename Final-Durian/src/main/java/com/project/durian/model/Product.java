@@ -35,8 +35,8 @@ public class Product {
     @Column
     private String imageLocation;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
-    private Set<ProductInventory> productInventoryList;
+    @Column(nullable = false)
+    private Integer quantity;
 
     public Product() {
     }
@@ -50,6 +50,7 @@ public class Product {
         this.name = productDTO.getName();
         this.description = productDTO.getDescription();
         this.price = productDTO.getPrice();
+        this.quantity = productDTO.getQuantity();
         this.imageLocation = productDTO.getImageLoc();
     }
 
@@ -84,4 +85,7 @@ public class Product {
     public LocalDateTime getModified_at() {
         return modified_at;
     }
+
+    public Integer getQuantity() { return quantity; }
+
 }

@@ -25,6 +25,9 @@ public class ProductDTO {
     @NotNull(message = "price required")
     private Integer price;
 
+    @NotNull(message = "Quantity required")
+    private Integer quantity;
+
     private MultipartFile image;
 
     private String imageLoc;
@@ -37,6 +40,7 @@ public class ProductDTO {
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
+        this.quantity = product.getQuantity();
         this.imageLoc = product.getImageLocation();
     }
 
@@ -71,6 +75,10 @@ public class ProductDTO {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
+    public Integer getQuantity() { return quantity; }
+
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
     public MultipartFile getImage() {
         return image;

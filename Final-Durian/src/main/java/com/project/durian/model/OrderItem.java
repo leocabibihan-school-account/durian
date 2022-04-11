@@ -17,6 +17,9 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    private Integer quantity;
+
     @OneToMany
     @JoinColumn(name = "order_id", nullable = false)
     private Set<OrderDetails> orderDetails;
@@ -41,7 +44,13 @@ public class OrderItem {
 
     public Long getId() { return id; }
 
+    public Integer getQuantity() { return quantity; }
+
     public LocalDateTime getCreated_at() { return created_at; }
 
     public LocalDateTime getModified_at() { return modified_at; }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }
