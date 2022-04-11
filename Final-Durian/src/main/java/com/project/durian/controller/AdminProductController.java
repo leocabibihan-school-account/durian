@@ -75,14 +75,6 @@ public class AdminProductController {
         return list(model);
     }
 
-    @GetMapping(value = "/{id}/image")
-    private ResponseEntity<Resource> getImage(@PathVariable Long id, Model model) throws IOException {
-        ProductDTO productDTO = productService.get(id);
-        Resource resource = fileStorageService.load(productDTO.getImageLoc());
-        return ResponseEntity.ok()
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .contentLength(resource.contentLength())
-                .body(resource);
-    }
+
 
 }
