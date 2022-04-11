@@ -57,7 +57,8 @@
                         <a href th:href="@{~/{id}(id=${product.id})}" class="text-decoration-none">
                             <div
                                     class="card text-white h-100 bg-dark rounded-5 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg')"
+
+                                    th:style="'background: center url('+ @{/images/{id}/product(id=*{product.id})} +');'"
                             >
                                 <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"

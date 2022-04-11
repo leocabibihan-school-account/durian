@@ -40,6 +40,9 @@ public class OrderDetails {
     @Column(nullable = false)
     private String status;
 
+    //order complete
+
+
     public OrderDetails() {}
 
     public OrderDetails(OrderDetailsDTO orderDetailsDTO) {

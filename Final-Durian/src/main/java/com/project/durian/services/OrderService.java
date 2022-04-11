@@ -26,7 +26,6 @@ public interface OrderService {
         Integer totalPrice();
     }
 
-    Cart init();
 
     //implementation creates new cart if it doesn't exist or none are new carts
     //returns most recently created cart/orderdetails that is not completed, boolean
