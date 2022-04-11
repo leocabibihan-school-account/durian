@@ -50,6 +50,7 @@ public class Product {
         this.name = productDTO.getName();
         this.description = productDTO.getDescription();
         this.price = productDTO.getPrice();
+        this.imageLocation = productDTO.getImageLoc();
     }
 
     public Long getId() {

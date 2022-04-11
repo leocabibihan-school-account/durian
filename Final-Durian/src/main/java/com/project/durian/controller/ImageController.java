@@ -36,6 +36,7 @@ public class ImageController {
     private FileStorageService fileStorageService;
 
 
+
     @GetMapping(value = "/{id}/product")
     private ResponseEntity<Resource> getImage(@PathVariable Long id, Model model) throws IOException {
         ProductDTO productDTO = productService.get(id);

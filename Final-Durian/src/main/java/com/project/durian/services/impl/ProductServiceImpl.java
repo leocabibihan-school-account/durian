@@ -46,6 +46,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void update(ProductDTO productDTO) {
+        Product product = productRepository.findById(productDTO.getId()).get();
+//        if (productDTO.getImage() != null) {
+//            fileStorageService.save(productDTO.getImage());
+//            product.setImageLocation(productDTO.getImage().getOriginalFilename());
+//        } else {
+//            productDTO.setImageLoc(product.getImageLocation());
+//        }
+        productDTO.setImageLoc(product.getImageLocation());
+
         productRepository.save(new Product(productDTO));
     }
 
