@@ -37,7 +37,7 @@ public class UserController {
 
 
         userService.add(user);
-        return "index";
+        return "redirect:/";
     }
 
 

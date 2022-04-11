@@ -18,7 +18,7 @@ public class OrderDetails {
 
     @ManyToOne
     @JoinColumn(name = "customer", nullable = false)
-    private Customer customer_id;
+    private Customer customer;
 
     @Column(nullable = false)
     private double total;
