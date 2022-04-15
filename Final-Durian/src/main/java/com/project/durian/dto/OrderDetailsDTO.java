@@ -8,7 +8,6 @@ public class OrderDetailsDTO {
 
     private Long id;
 
-    private Long customerId;
 
     private double total;
 
@@ -28,7 +27,6 @@ public class OrderDetailsDTO {
 
     public OrderDetailsDTO(OrderDetails orderDetails) {
         this.id = orderDetails.getId();
-//      this.customerId = orderDetails.getCustomer().getId();
         this.total = orderDetails.getTotal();
         this.amount = orderDetails.getAmount();
         this.orderComplete = orderDetails.getOrderComplete();

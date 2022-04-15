@@ -57,8 +57,8 @@ public class Customer {
     @Column(nullable = false)
     private int telephone;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
-    private Set<CustomerPayment> customerPaymentList;
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
+//    private Set<CustomerPayment> customerPaymentList;
 
 
     public Customer() {}
