@@ -3,6 +3,7 @@ package com.project.durian.model;
 import com.project.durian.dto.OrderDetailsDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,6 +27,9 @@ public class OrderDetails {
     @Column(nullable = false)
     private int amount;
 
+    @Column(nullable = false)
+    private Boolean orderComplete;
+
     @Column(updatable = false)
     @CreationTimestamp
     private LocalDateTime created_at;
@@ -46,18 +50,29 @@ public class OrderDetails {
     public OrderDetails() {}
 
     public OrderDetails(OrderDetailsDTO orderDetailsDTO) {
+
         this.id = orderDetailsDTO.getId();
         this.total = orderDetailsDTO.getTotal();
         this.amount = orderDetailsDTO.getAmount();
+        this.orderComplete = orderDetailsDTO.getOrderComplete();
+
     }
 
     public Long getId() { return id; }
 
+    public void setId(Long id) { this.id = id; }
+
     public double getTotal() { return total; }
+
+    public void setTotal(double total) { this.total = total; }
 
     public int getAmount() { return amount; }
 
+    public void setAmount(int amount) { this.amount = amount; }
+
     public String getProvider() { return provider; }
+
+    public void setProvider(String provider) { this.provider = provider; }
 
     public String getStatus() { return status; }
 }
