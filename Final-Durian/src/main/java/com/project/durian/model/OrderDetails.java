@@ -44,7 +44,6 @@ public class OrderDetails {
     @Column(nullable = false)
     private String status;
 
-    //order complete
 
 
     public OrderDetails() {}
@@ -75,4 +74,8 @@ public class OrderDetails {
     public void setProvider(String provider) { this.provider = provider; }
 
     public String getStatus() { return status; }
+
+    public Boolean getOrderComplete() {
+        return orderComplete;
+    }
 }
