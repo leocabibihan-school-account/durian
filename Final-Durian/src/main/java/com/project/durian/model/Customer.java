@@ -16,16 +16,21 @@ public class Customer {
     @Column (name = "user_id")
     private Long id;
 
-    @OneToOne()
-    @MapsId
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @OneToOne()
+//    @MapsId
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = true)
     private String first_name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String last_name;
 
     @Column(updatable = false)
@@ -36,29 +41,30 @@ public class Customer {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String  address_line1;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String  address_line2;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String city;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String  postal_code;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String  country;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int mobile;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int telephone;
 
 //    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
 //    private Set<CustomerPayment> customerPaymentList;
+
 
 
     public Customer() {}
@@ -72,6 +78,8 @@ public class Customer {
         this.city = customerDTO.getCity();
         this.postal_code = customerDTO.getPostalCode();
         this.country = customerDTO.getCountry();
+        this.email = customerDTO.getEmail();
+        this.password = customerDTO.getPassword();
     }
 
     public Long getId() {
@@ -121,4 +129,18 @@ public class Customer {
     public int getTelephone() {
         return telephone;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+
 }

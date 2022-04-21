@@ -2,6 +2,8 @@ package com.project.durian.dto;
 
 import com.project.durian.model.Customer;
 import com.project.durian.model.User;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
@@ -10,27 +12,28 @@ public class CustomerDTO {
 
     private Long id;
 
-    @NotBlank(message = "Firstname is Required")
+
+    @NotBlank(message = "Password is Required")
+    private String password;
+
+    @Email(message = "Email should be valid")
+    @NotBlank(message = "Email is Required")
+    private String email;
+
     private String firstName;
 
-    @NotBlank(message = "Lastname is Required")
     private String lastName;
 
-    @NotBlank(message = "Address is Required")
     private String addressLine1;
 
     private String addressLine2;
 
-    @NotBlank(message = "City is Required")
     private String city;
 
-    @NotBlank(message = "Postal Code is Required")
     private String postalCode;
 
-    @NotBlank(message = "Phone number is Required")
     private int telephone;
 
-    @NotBlank(message = "Country is Required")
     private String country;
 
     private User user;
@@ -47,6 +50,8 @@ public class CustomerDTO {
         this.postalCode = customer.getPostal_code();
         this.telephone = customer.getTelephone();
         this.country = customer.getCountry();
+        this.password = customer.getPassword();
+        this.email = customer.getEmail();
 
     }
 
@@ -124,5 +129,13 @@ public class CustomerDTO {
 
     public String getCountry() {
         return country;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

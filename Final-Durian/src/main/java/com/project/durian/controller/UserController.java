@@ -1,7 +1,9 @@
 package com.project.durian.controller;
 
 
+import com.project.durian.dto.CustomerDTO;
 import com.project.durian.dto.UserDTO;
+import com.project.durian.services.CustomerService;
 import com.project.durian.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,26 +19,26 @@ import javax.validation.Valid;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private CustomerService customerService;
 
 
     @GetMapping("/sign-up")
     private String getUserAddForm(Model model) {
-        model.addAttribute("user", new UserDTO());
+        model.addAttribute("user", new CustomerDTO());
         return "user/sign-up";
     }
 
     @PostMapping
-    private String add(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model){
-        user.setAdmin(false);
-        if (userService.validateUser(user, bindingResult))
+    private String add(@Valid @ModelAttribute("user") CustomerDTO user, BindingResult bindingResult, Model model){
+
+        if (customerService.validateUser(user, bindingResult))
         {
             model.addAttribute("user", user);
             return "user/sign-up";
         }
 
 
-        userService.add(user);
+        customerService.add(user);
         return "redirect:/";
     }
 
