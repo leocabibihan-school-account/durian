@@ -9,13 +9,14 @@ public class OrderItemDTO {
 
     private Integer quantity;
 
-    private Product product;
+    private ProductDTO product;
 
     public OrderItemDTO () {}
 
     public OrderItemDTO(OrderItem orderItem) {
         this.id = orderItem.getId();
         this.quantity = orderItem.getQuantity();
+        this.product = new ProductDTO(orderItem.getProduct());
     }
 
     public Long getId() {
@@ -30,11 +31,8 @@ public class OrderItemDTO {
 
     public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
-    public Product getProduct() {
+    public ProductDTO getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }

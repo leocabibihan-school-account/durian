@@ -7,6 +7,7 @@ import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 
 @Entity
@@ -44,6 +45,10 @@ public class OrderDetails {
     @Column(nullable = false)
     private String status;
 
+    //set of many orderitems
+    @OneToMany
+    @JoinColumn(name = "order_id", nullable = false)
+    private Set<OrderItem> orderItems;
 
 
     public OrderDetails() {}
@@ -77,5 +82,13 @@ public class OrderDetails {
 
     public Boolean getOrderComplete() {
         return orderComplete;
+    }
+
+    public Set<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 }

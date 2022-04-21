@@ -4,6 +4,7 @@ package com.project.durian.model;
 import com.project.durian.dto.OrderItemDTO;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -20,9 +21,12 @@ public class OrderItem {
     @Column
     private Integer quantity;
 
-    @OneToMany
+//    @OneToMany
+//    @JoinColumn(name = "order_id", nullable = false)
+//    private Set<OrderDetails> orderDetails;
+    @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private Set<OrderDetails> orderDetails;
+    private OrderDetails orderDetails;
 
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
@@ -52,5 +56,9 @@ public class OrderItem {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Product getProduct() {
+        return product;
     }
 }

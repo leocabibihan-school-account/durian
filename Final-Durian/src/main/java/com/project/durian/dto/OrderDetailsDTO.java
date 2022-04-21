@@ -3,6 +3,10 @@ package com.project.durian.dto;
 import com.project.durian.model.OrderDetails;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class OrderDetailsDTO {
 
@@ -23,6 +27,11 @@ public class OrderDetailsDTO {
 
     private String status;
 
+    private Set<OrderItemDTO> orderItems;
+
+    private CustomerDTO customer;
+
+
     public OrderDetailsDTO () {}
 
     public OrderDetailsDTO(OrderDetails orderDetails) {
@@ -32,6 +41,13 @@ public class OrderDetailsDTO {
         this.orderComplete = orderDetails.getOrderComplete();
         this.provider = orderDetails.getProvider();
         this.status = orderDetails.getStatus();
+        this.orderItems = Optional.ofNullable(orderDetails.getOrderItems())
+                .orElseGet(Collections::emptySet)
+                .stream()
+                .map(OrderItemDTO::new)
+                .collect(Collectors.toSet());
+        this.customer = new CustomerDTO(orderDetails.getCustomer());
+
     }
 
     public Long getId() {
@@ -76,5 +92,17 @@ public class OrderDetailsDTO {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Set<OrderItemDTO> getOrderItems() {
+        return orderItems;
+    }
+
+    public CustomerDTO getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerDTO customer) {
+        this.customer = customer;
     }
 }
