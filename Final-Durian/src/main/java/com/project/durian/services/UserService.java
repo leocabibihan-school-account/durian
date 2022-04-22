@@ -1,9 +1,7 @@
 package com.project.durian.services;
 
-import com.project.durian.dto.CustomerDTO;
 import com.project.durian.dto.UserDTO;
 import com.project.durian.dto.UserDTO;
-import com.project.durian.model.Customer;
 import com.project.durian.model.User;
 import org.springframework.validation.BindingResult;
 
@@ -17,9 +15,9 @@ public interface UserService {
 
     void add(UserDTO user);
 
-    public boolean hasEmail(UserDTO user);
+    boolean hasEmail(UserDTO user);
 
-    public boolean validateUser(UserDTO user, BindingResult bindingResult);
+    boolean validateUser(UserDTO user, BindingResult bindingResult, Boolean isCreate);
 
     UserDTO get(Long id);
 

@@ -35,7 +35,7 @@ public class AdminController {
     @PutMapping
     private String updateUser(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
 
-        if (userService.validateUser(user, bindingResult)) {
+        if (userService.validateUser(user, bindingResult, false)) {
             model.addAttribute("user", user);
             return "admin/view-user";
         }

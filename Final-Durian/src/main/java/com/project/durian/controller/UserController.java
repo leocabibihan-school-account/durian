@@ -29,7 +29,7 @@ public class UserController {
     @PostMapping
     private String add(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model){
         user.setAdmin(false);
-        if (userService.validateUser(user, bindingResult))
+        if (userService.validateUser(user, bindingResult, true))
         {
             model.addAttribute("user", user);
             return "user/sign-up";

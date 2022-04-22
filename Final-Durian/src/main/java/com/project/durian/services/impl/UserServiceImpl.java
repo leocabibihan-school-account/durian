@@ -45,8 +45,8 @@ public class UserServiceImpl implements UserService {
               .anyMatch((User user)-> user.getEmail().equals(userDTO.getEmail()));
     }
 
-    public boolean validateUser(UserDTO userDTO, BindingResult bindingResult) {
-        if (hasEmail(userDTO)) {
+    public boolean validateUser(UserDTO userDTO, BindingResult bindingResult, Boolean isCreate) {
+        if (hasEmail(userDTO) && isCreate) {
             bindingResult.addError(new ObjectError("user", "Email already exists") );
         }
         return bindingResult.hasErrors();
