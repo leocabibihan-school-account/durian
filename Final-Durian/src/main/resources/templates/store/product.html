@@ -24,9 +24,16 @@
         <p th:text="${product.description}">
 
         </p>
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">Add to Cart</button>
-        </div>
+<!--        <div class="d-grid gap-2">-->
+<!--          <form class="mt-1" th:method="product" th:action="@{~/order}">-->
+<!--            <input type="hidden" name="id" th:value="${product.id}">-->
+<!--            <button type="submit" class="btn btn-outline-secondary">Permanently Delete</button>-->
+<!--          </form>-->
+<!--        </div>-->
+        <a class="btn" th:href="@{~/order/{id}(id=${product.id})}">
+          buy now
+        </a>
+
       </div>
     </div>
   </div>
