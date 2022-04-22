@@ -32,8 +32,7 @@ public class AdminProductController {
     @Autowired
     private ProductService productService;
 
-    @Autowired
-    private FileStorageService fileStorageService;
+
 
     @GetMapping
     private String list(Model model) {
@@ -49,6 +48,7 @@ public class AdminProductController {
 
     @PostMapping
     private String add(@Valid @ModelAttribute("product") ProductDTO product, BindingResult bindingResult, Model model) {
+
         if (bindingResult.hasErrors()) {
             model.addAttribute("product", product);
             return "admin-product/add-product";

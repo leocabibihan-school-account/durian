@@ -18,7 +18,7 @@ public class StoreController {
 
     @GetMapping
     private String list(Model model) {
-        model.addAttribute("products", productService.list());
+        model.addAttribute("products", productService.list(true));
         return "store/index";
     }
 

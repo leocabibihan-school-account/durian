@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -23,10 +24,16 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public List<ProductDTO> list() {
+    public List<ProductDTO> list(Boolean storeFilter) {
         return StreamSupport.stream(productRepository.findAll().spliterator(), false)
+                .filter(product -> !storeFilter || product.getQuantity() > 0)//don't show empty inventory in store
                 .map(ProductDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> list() {
+        return list(false);
     }
 
     @Override
