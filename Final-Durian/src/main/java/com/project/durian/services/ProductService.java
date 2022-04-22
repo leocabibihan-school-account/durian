@@ -8,6 +8,9 @@ public interface ProductService {
 
     List<ProductDTO> list();
 
+    List<ProductDTO> list(Boolean toggleStoreFilter);
+
+
     void add(ProductDTO productDTO);
 
     ProductDTO get(Long id);

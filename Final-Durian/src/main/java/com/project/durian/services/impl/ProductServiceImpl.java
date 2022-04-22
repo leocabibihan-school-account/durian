@@ -23,10 +23,16 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public List<ProductDTO> list() {
+    public List<ProductDTO> list(Boolean toggleStoreFilter) {
         return StreamSupport.stream(productRepository.findAll().spliterator(), false)
+                .filter(product -> !toggleStoreFilter || product.getQuantity() > 0)//don't show empty inventory in store
                 .map(ProductDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> list() {
+        return list(false);
     }
 
     @Override
