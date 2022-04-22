@@ -9,7 +9,7 @@
 <div th:replace="fragments/header :: header"></div>
 <main>
   <div class="container">
-    <h1 class="mt-5">Add Product</h1>
+    <h1 class="mt-5" th:text="|Buy ${product.name} for ${product.price}|"></h1>
     <form th:method="POST" th:action="@{~/order}" th:object="${orders}">
       <div th:replace ="fragments/error :: error"></div>
 

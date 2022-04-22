@@ -4,6 +4,7 @@ package com.project.durian.controller;
 import com.project.durian.dto.OrderDTO;
 import com.project.durian.dto.ProductDTO;
 import com.project.durian.services.OrderService;
+import com.project.durian.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,15 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private ProductService productService;
+
     @GetMapping("{productId}")
     private String orderForm(@PathVariable Long productId, Model model) {
         OrderDTO order = new OrderDTO();
         order.setProductId(productId);
         model.addAttribute("orders", order);
+        model.addAttribute("product", productService.get(productId));
 //        model.addAttribute("product_id", productId);
         return "order/index";
     }
