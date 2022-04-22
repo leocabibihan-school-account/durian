@@ -5,6 +5,7 @@ import com.project.durian.model.User;
 import com.project.durian.repository.UserRepository;
 import com.project.durian.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -23,7 +24,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<UserDTO> list() {
@@ -34,6 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void add(UserDTO userDTO) {
+        userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(new User(userDTO));
     }
 
