@@ -29,11 +29,6 @@ public class User {
 
 
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.MERGE)
-    @PrimaryKeyJoinColumn
-    private Customer customer;
-
-
 
     public User() {
     }
@@ -49,10 +44,6 @@ public class User {
         this.admin = userDTO.getAdmin();
     }
 
-
-    public Customer getCustomer() {
-        return customer;
-    }
     public Long getId() {
         return id;
     }

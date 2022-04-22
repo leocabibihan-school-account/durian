@@ -1,6 +1,5 @@
 package com.project.durian.dto;
 
-import com.project.durian.model.Customer;
 import com.project.durian.model.User;
 
 import javax.persistence.Column;
@@ -27,7 +26,6 @@ public class UserDTO {
 
     private Boolean admin;
 
-    private CustomerDTO customer;
 
     public UserDTO() {}
 
@@ -36,7 +34,6 @@ public class UserDTO {
         this.password = user.getPassword();
         this.email = user.getEmail();
         this.admin = user.getAdmin();
-        this.customer = user.getCustomer() == null? null: new CustomerDTO(user.getCustomer());
     }
 
     public Long getId() {
@@ -71,9 +68,7 @@ public class UserDTO {
         this.admin = admin;
     }
 
-    public CustomerDTO getCustomer() {
-        return customer;
-    }
+
 
 
 }

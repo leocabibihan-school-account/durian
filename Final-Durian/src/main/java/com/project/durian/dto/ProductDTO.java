@@ -1,6 +1,5 @@
 package com.project.durian.dto;
 
-import com.project.durian.model.Customer;
 import com.project.durian.model.Product;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.multipart.MultipartFile;
