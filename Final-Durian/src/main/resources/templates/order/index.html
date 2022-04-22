@@ -11,13 +11,15 @@
   <div class="container">
     <h1 class="mt-5">Add Product</h1>
     <form th:method="POST" th:action="@{~/order}" th:object="${orders}">
+      <div th:replace ="fragments/error :: error"></div>
+
       <input type="hidden" name="id" th:field="*{productId}">
 
-      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
-        <ul>
-          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
-        </ul>
-      </div>
+<!--      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">-->
+<!--        <ul>-->
+<!--          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>-->
+<!--        </ul>-->
+<!--      </div>-->
       <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" id="firstname" th:field="*{firstName}" placeholder="">

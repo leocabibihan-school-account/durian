@@ -34,6 +34,7 @@ public class OrderServiceImpl implements OrderService {
     public void add(OrderDTO orderDTO) {
         ProductDTO product = productService.get(orderDTO.getProductId());
         orderDTO.setProductName(product.getName());
+        product.setQuantity(product.getQuantity() - orderDTO.getQuantity());
         //remove quantity from product
         orderRepository.save(new Orders(orderDTO));
     }
