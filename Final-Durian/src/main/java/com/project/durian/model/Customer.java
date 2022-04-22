@@ -14,12 +14,13 @@ public class Customer {
 
     @Id
     @Column (name = "user_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-//    @OneToOne()
-//    @MapsId
-//    @JoinColumn(name = "user_id")
-//    private User user;
+    @OneToMany(mappedBy="customer_id", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
+    private Set<OrderDetails> orderDetails;
+
+
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -27,10 +28,10 @@ public class Customer {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = true)
+    @Column()
     private String first_name;
 
-    @Column(nullable = true)
+    @Column()
     private String last_name;
 
     @Column(updatable = false)
@@ -41,33 +42,36 @@ public class Customer {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @Column(nullable = true)
+    @Column()
     private String  address_line1;
 
-    @Column(nullable = true)
+    @Column()
     private String  address_line2;
 
-    @Column(nullable = true)
+    @Column()
     private String city;
 
-    @Column(nullable = true)
+    @Column()
     private String  postal_code;
 
-    @Column(nullable = true)
+    @Column()
     private String  country;
 
-    @Column(nullable = true)
+    @Column()
     private int mobile;
 
-    @Column(nullable = true)
+    @Column()
     private int telephone;
 
-//    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
-//    private Set<CustomerPayment> customerPaymentList;
+
 
 
 
     public Customer() {}
+
+    public Customer(Long id) {
+        this.id = id;
+    }
 
     public Customer(CustomerDTO customerDTO) {
         this.id = customerDTO.getId();
@@ -143,4 +147,7 @@ public class Customer {
     }
 
 
+    public Set<OrderDetails> getOrderDetails() {
+        return orderDetails;
+    }
 }

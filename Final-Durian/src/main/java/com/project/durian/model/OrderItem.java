@@ -25,12 +25,12 @@ public class OrderItem {
 //    @JoinColumn(name = "order_id", nullable = false)
 //    private Set<OrderDetails> orderDetails;
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
-    private OrderDetails orderDetails;
+    @JoinColumn(name = "order_details", nullable = false)
+    private OrderDetails order_details;
 
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    private Product product_id;
 
     @Column(updatable = false)
     @CreationTimestamp
@@ -59,6 +59,6 @@ public class OrderItem {
     }
 
     public Product getProduct() {
-        return product;
+        return product_id;
     }
 }

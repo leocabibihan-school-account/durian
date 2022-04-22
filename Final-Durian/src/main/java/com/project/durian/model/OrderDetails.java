@@ -19,14 +19,14 @@ public class OrderDetails {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer", nullable = false)
-    private Customer customer;
+    @JoinColumn(name = "customer", nullable = false, insertable = false, updatable = false)
+    private Customer customer_id;
 
     @Column(nullable = false)
     private double total;
 
-    @Column(nullable = false)
-    private int amount;
+//    @Column(nullable = false)
+//    private int amount;
 
     @Column(nullable = false)
     private Boolean orderComplete;
@@ -39,25 +39,31 @@ public class OrderDetails {
     @UpdateTimestamp
     private LocalDateTime modified_at;
 
-    @Column(nullable = false)
+    @Column()
     private String provider;
 
-    @Column(nullable = false)
+    @Column()
     private String status;
 
     //set of many orderitems
-    @OneToMany
-    @JoinColumn(name = "order_item_id", nullable = false)
-    private Set<OrderItem> orderItems;
+//    @OneToMany
+//    @JoinColumn(name = "order_item")
+    @OneToMany(mappedBy="order_details", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
+    private Set<OrderItem> order_items;
+
 
 
     public OrderDetails() {}
 
-    public OrderDetails(OrderDetailsDTO orderDetailsDTO) {
+//    public OrderDetails(Long id) {
+//        this.id = id;
+//    }
 
+    public OrderDetails(OrderDetailsDTO orderDetailsDTO) {
+        this.customer_id = new Customer(orderDetailsDTO.getCustomerId());
         this.id = orderDetailsDTO.getId();
         this.total = orderDetailsDTO.getTotal();
-        this.amount = orderDetailsDTO.getAmount();
+//        this.amount = orderDetailsDTO.getAmount();
         this.orderComplete = orderDetailsDTO.getOrderComplete();
 
     }
@@ -70,9 +76,9 @@ public class OrderDetails {
 
     public void setTotal(double total) { this.total = total; }
 
-    public int getAmount() { return amount; }
+//    public int getAmount() { return amount; }
 
-    public void setAmount(int amount) { this.amount = amount; }
+//    public void setAmount(int amount) { this.amount = amount; }
 
     public String getProvider() { return provider; }
 
@@ -85,10 +91,10 @@ public class OrderDetails {
     }
 
     public Set<OrderItem> getOrderItems() {
-        return orderItems;
+        return order_items;
     }
 
     public Customer getCustomer() {
-        return customer;
+        return customer_id;
     }
 }

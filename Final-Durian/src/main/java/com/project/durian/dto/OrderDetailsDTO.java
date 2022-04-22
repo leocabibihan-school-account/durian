@@ -12,10 +12,11 @@ public class OrderDetailsDTO {
 
     private Long id;
 
+    private Long customerId;
 
     private double total;
 
-    private int amount;
+//    private int amount;
 
     private LocalDateTime created_at;
 
@@ -29,15 +30,16 @@ public class OrderDetailsDTO {
 
     private Set<OrderItemDTO> orderItems;
 
-    private CustomerDTO customer;
+//    private CustomerDTO customer;
 
 
     public OrderDetailsDTO () {}
 
     public OrderDetailsDTO(OrderDetails orderDetails) {
         this.id = orderDetails.getId();
+        this.customerId = orderDetails.getCustomer().getId();
         this.total = orderDetails.getTotal();
-        this.amount = orderDetails.getAmount();
+//        this.amount = orderDetails.getAmount();
         this.orderComplete = orderDetails.getOrderComplete();
         this.provider = orderDetails.getProvider();
         this.status = orderDetails.getStatus();
@@ -46,7 +48,7 @@ public class OrderDetailsDTO {
                 .stream()
                 .map(OrderItemDTO::new)
                 .collect(Collectors.toSet());
-        this.customer = new CustomerDTO(orderDetails.getCustomer());
+//        this.customer = new CustomerDTO(orderDetails
 
     }
 
@@ -66,13 +68,13 @@ public class OrderDetailsDTO {
         this.total = total;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
+//    public int getAmount() {
+//        return amount;
+//    }
+//
+//    public void setAmount(int amount) {
+//        this.amount = amount;
+//    }
 
     public Boolean getOrderComplete() { return orderComplete; }
 
@@ -98,11 +100,19 @@ public class OrderDetailsDTO {
         return orderItems;
     }
 
-    public CustomerDTO getCustomer() {
-        return customer;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(CustomerDTO customer) {
-        this.customer = customer;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
+
+//    public CustomerDTO getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(CustomerDTO customer) {
+//        this.customer = customer;
+//    }
 }

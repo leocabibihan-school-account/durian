@@ -8,10 +8,11 @@ import com.project.durian.services.CustomerService;
 import com.project.durian.services.OrderDetailsService;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
+@Service
 public class OrderDetailsServiceImpl implements OrderDetailsService{
 
     @Autowired
@@ -24,9 +25,13 @@ public class OrderDetailsServiceImpl implements OrderDetailsService{
     public OrderDetailsDTO get(Long customerId) {
         //create an order dto with the user id
         OrderDetailsDTO newCart = new OrderDetailsDTO();
-        newCart.setCustomer(customerService.get(customerId));
+//        newCart.setCustomer(customerService.get(customerId));
+        newCart.setCustomerId(customerId);
+        newCart.setTotal(0);
+        newCart.setOrderComplete(false);
+
         return new OrderDetailsDTO(StreamSupport.stream(orderDetailsRepository.findAll().spliterator(), false)
-                .filter(t -> t.getCustomer().equals(customerId))
+                .filter(t -> t.getCustomer().getId().equals(customerId))
                 .filter(t -> t.getOrderComplete().equals(true))
                 .findFirst()
                 .orElse(orderDetailsRepository.save(new OrderDetails(newCart))));

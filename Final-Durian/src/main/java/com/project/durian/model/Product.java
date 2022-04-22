@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
+@Table(name = "product")
 public class Product {
 
     @Id
@@ -37,6 +38,9 @@ public class Product {
 
     @Column(nullable = false)
     private Integer quantity;
+
+    @OneToMany(mappedBy="product_id", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
+    private Set<OrderItem> order_items;
 
     public Product() {
     }

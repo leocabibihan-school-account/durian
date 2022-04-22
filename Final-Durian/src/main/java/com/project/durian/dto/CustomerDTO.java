@@ -35,6 +35,7 @@ public class CustomerDTO {
 
 
     public CustomerDTO() {}
+
     
     public CustomerDTO(Customer customer) {
         this.id = customer.getId();
@@ -128,4 +129,8 @@ public class CustomerDTO {
     public String getEmail() {
         return email;
     }
+
+    public void setEmail(String email) {this.email = email;}
+
+    public void setPassword(String password) {this.password = password;}
 }
