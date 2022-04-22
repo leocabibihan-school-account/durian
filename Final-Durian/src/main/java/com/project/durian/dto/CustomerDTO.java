@@ -1,12 +1,9 @@
 package com.project.durian.dto;
 
 import com.project.durian.model.Customer;
-import com.project.durian.model.User;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
-import java.time.LocalDateTime;
 
 public class CustomerDTO {
 
@@ -36,7 +33,6 @@ public class CustomerDTO {
 
     private String country;
 
-    private User user;
 
     public CustomerDTO() {}
     
@@ -119,13 +115,7 @@ public class CustomerDTO {
         this.telephone = telephone;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public String getCountry() {
         return country;

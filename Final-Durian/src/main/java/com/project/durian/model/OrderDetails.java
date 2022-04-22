@@ -47,7 +47,7 @@ public class OrderDetails {
 
     //set of many orderitems
     @OneToMany
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_item_id", nullable = false)
     private Set<OrderItem> orderItems;
 
 

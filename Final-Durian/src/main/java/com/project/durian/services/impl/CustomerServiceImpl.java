@@ -1,9 +1,7 @@
 package com.project.durian.services.impl;
 
 import com.project.durian.dto.CustomerDTO;
-import com.project.durian.dto.UserDTO;
 import com.project.durian.model.Customer;
-import com.project.durian.model.User;
 import com.project.durian.repository.CustomerRepository;
 import com.project.durian.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
